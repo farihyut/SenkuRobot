@@ -51,24 +51,24 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi {}, my name is Kai Yamato! 
-I am From Anime Scar On Praeter!.
-Build by [Him](t.me/Takahashihelp), I specialize in managing anime and similar themed groups.
+Hi {}, my name is Killua! 
+My hair color is white!!.
+Build by [Him](t.me/coiju), I specialize in managing anime and similar themed groups.
 You can find my list of available commands with /help.
 """
 
 HELP_STRINGS = """
-Hey there! My name is *Kau Yamato*.
-I'm A Scarf & I help admins to manage their groups! Have a look at the following for an idea of some of \
+Hey there! My name is Killua.
+I'm A Assassin & I help admins to manage their groups! Have a look at the following for an idea of some of \
 the things I can help you with.
 
 *Main* commands available:
- • /help: PM's you this message.
- • /help <module name>: PM's you info about that module.
- • /donate: information on how to donate!
- • /settings:
-   • in PM: will send you your settings for all supported modules.
-   • in a group: will redirect you to pm, with all that chat's settings.
+ ➮• /help: PM's you this message.
+ ➮• /help <module name>: PM's you info about that module.
+ ➮• /donate: information on how to donate!
+➮ • /settings:
+  ➮ • in PM: will send you your settings for all supported modules.
+   ➮• in a group: will redirect you to pm, with all that chat's settings.
 
 
 {}
@@ -77,7 +77,7 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG ="https://telegra.ph/file/bb1166d2a04367406b9e7.jpg"
+SAITAMA_IMG ="https://telegra.ph/file/bf0f880de8c6eb08f284d.mp4"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 Senku is hosted on one of Heroku's Servers and doesn't require any donations as of now but \
@@ -168,7 +168,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id, HELPABLE[mod].__help__,
                     InlineKeyboardMarkup([[
                         InlineKeyboardButton(
-                            text="Back", callback_data="help_back")
+                            text="Bakku", callback_data="help_back")
                     ]]))
             elif args[0].lower() == "markdownhelp":
                 IMPORTED["extras"].markdown_help_sender(update)
@@ -200,31 +200,31 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text=" 🔫 Add yamato ",
+                            text="⚔️ Add Killua ⚔️",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username)),
                          InlineKeyboardButton(
                              text=" 🔔 Updates ",
-                             url="https://t.me/Takahashihelp")
+                             url="https://t.me/HelpMeBotU")
                      ],
                      [
                         InlineKeyboardButton(
                             text=" ✨ Help ",
-                            url="https://t.me/SenkuRobot?start=help"),
+                            url="https://t.me/KilluaZoldyckRobot?start=help"),
                          InlineKeyboardButton(
                             text=" ⚡️ Get Started ",
-                             url="https://t.me/SenkuUpdates/4")        
+                             url="https://t.me/HelpMeBotU/2")        
                        
                      ],
                      [
                         InlineKeyboardButton(
-                             text=" ❤️ Source Code ",
-                             url="https://github.com/FtSasaki/SenkuRobot")
+                             text=" 🐻owner🐻 ",
+                             url="https://t.me/coiju")
                     
                     ]]))
     else:
         update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
+            "Modorimashita!\n<b>Haven't slept since:</b> <code>{}</code>"
             .format(uptime),
             parse_mode=ParseMode.HTML)
 
@@ -323,7 +323,8 @@ def get_help(update: Update, context: CallbackContext):
         if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
             module = args[1].lower()
             update.effective_message.reply_text(
-                f"Contact me in PM to get help of {module.capitalize()}",
+                f" Puraibēto ni renraku shite kudasai!
+{module.capitalize()}",
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton(
                         text="Help",
@@ -335,7 +336,7 @@ def get_help(update: Update, context: CallbackContext):
             "Contact me in PM to get the list of possible commands.",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton(
-                    text="Help",
+                    text="助けて",
                     url="t.me/{}?start=help".format(context.bot.username))
             ]]))
         return
