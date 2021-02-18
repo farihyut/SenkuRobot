@@ -32,7 +32,7 @@ def approve(update, context):
         return ""
     if member.status == "administrator" or member.status == "creator":
         message.reply_text(
-            "User is already admin - locks, blocklists, and antiflood already don't apply to them."
+            "User is already admin."
         )
         return ""
     if sql.is_approved(message.chat_id, user_id):
